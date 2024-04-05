@@ -1,7 +1,10 @@
-import { FC } from "react"
+import { FC } from "react";
+import { PageTemplate } from "./pageTemplate";
 
 export const JourneyPage: FC = () => {
-    return (
-        <div>Journey Page</div>
-    )
-}
+  return (
+    <PageTemplate>
+      <div>Journey Page</div>
+    </PageTemplate>
+  );
+};

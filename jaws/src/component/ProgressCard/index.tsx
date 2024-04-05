@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { CurrentWeek } from "../CurrentWeek";
 import { ProgressCircle } from "../ProgressCircle";
+import { Link } from "react-router-dom";
 
 export const ProgressCard: FC = () => {
     return (
@@ -19,8 +20,8 @@ export const ProgressCard: FC = () => {
       >
         <CurrentWeek />
         <ProgressCircle />
-        <div>Daily Challenges</div>
-        <div>Update your goals</div>
+        <div><h1>Daily Challenges</h1></div>
+        <Link to={"/journey"}><div>Update your goals</div></Link>
       </div>
     );
   };
