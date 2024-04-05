@@ -1,30 +1,38 @@
 import { Menu, MenuProps } from "antd";
 import { FC } from "react";
+import { Link } from "react-router-dom";
+
+interface MenuItem {
+  key: string;
+  label: string;
+  path: string;
+}
 
 export const Banner: FC = () => {
+  const menuItems: MenuItem[] = [
+    { key: 'progress', label: 'Progress', path: '/progress' },
+    { key: 'awards', label: 'Awards', path: '/awards' },
+    { key: 'community', label: 'Community', path: '/community' },
+    { key: 'journey', label: 'Journey', path: '/journey' },
+    { key: 'ecoTracking', label: 'Eco Tracking', path: '/eco-tracking' },
+  ];
 
-    const items1: MenuProps["items"] = [
-        "Progress",
-        "Awards",
-        "Community",
-        "Journey",
-        "Eco Tracking",
-      ].map((key) => ({
-        key,
-        label: key,
-      }));
-      
-    return (
-        <Menu
-        mode="horizontal"
-        defaultSelectedKeys={["1"]}
-        items={items1}
-        style={{
-          minWidth: 0,
-          flex: "auto",
-          backgroundColor: "#7fb9ba",
-          fontSize: "10px",
-        }}
-      />
-    );
-  };
+  return (
+    <Menu
+      mode="horizontal"
+      defaultSelectedKeys={['1']}
+      style={{
+        minWidth: 0,
+        flex: 'auto',
+        backgroundColor: '#7fb9ba',
+        fontSize: '10px',
+      }}
+    >
+      {menuItems.map(item => (
+        <Menu.Item key={item.key} >
+          <Link to={item.path}>{item.label}</Link>
+        </Menu.Item>
+      ))}
+    </Menu>
+  );
+};

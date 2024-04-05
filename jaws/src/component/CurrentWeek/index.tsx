@@ -45,6 +45,7 @@ export const CurrentWeek: FC = () => {
           fontWeight: "600",
           borderRadius: "10px",
           alignContent: "center",
+          textAlign: "center"
         }}
       >
         Week 1 Day 5
