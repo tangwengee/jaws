@@ -1,5 +1,5 @@
-import { FC } from "react"
+import { FC } from "react";
 
 export const Leaf: FC = () => {
-    return <img src="/greenleaf.png" width="10" height="10" />
-}
+  return <img src="/greenleaf.png" width="10" height="10" alt="" />;
+};

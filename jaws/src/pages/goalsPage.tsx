@@ -1,10 +1,10 @@
 import { FC } from "react";
 import { PageTemplate } from "./pageTemplate";
 
-export const CommunityPage: FC = () => {
+export const GoalsPage: FC = () => {
   return (
     <PageTemplate>
-      <div>Community Page</div>
+      <div>Goals Page</div>
     </PageTemplate>
   );
 };

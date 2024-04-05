@@ -1,4 +1,4 @@
-import { Menu, MenuProps } from "antd";
+import { Menu } from "antd";
 import { FC } from "react";
 import { Link } from "react-router-dom";
 
@@ -10,11 +10,11 @@ interface MenuItem {
 
 export const Banner: FC = () => {
   const menuItems: MenuItem[] = [
-    { key: 'progress', label: 'Progress', path: '/progress' },
+    { key: 'progress', label: 'Progress', path: '/' },
     { key: 'awards', label: 'Awards', path: '/awards' },
     { key: 'community', label: 'Community', path: '/community' },
     { key: 'journey', label: 'Journey', path: '/journey' },
-    { key: 'ecoTracking', label: 'Eco Tracking', path: '/eco-tracking' },
+    { key: 'ecoTracking', label: 'Eco Tracking', path: '/ecoTracking' },
   ];
 
   return (
@@ -25,7 +25,9 @@ export const Banner: FC = () => {
         minWidth: 0,
         flex: 'auto',
         backgroundColor: '#7fb9ba',
-        fontSize: '10px',
+        fontSize: '12px',
+        justifyContent: "center",
+        fontWeight: "700"
       }}
     >
       {menuItems.map(item => (

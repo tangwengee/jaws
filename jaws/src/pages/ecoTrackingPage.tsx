@@ -1,7 +1,10 @@
-import { FC } from "react"
+import { FC } from "react";
+import { PageTemplate } from "./pageTemplate";
 
 export const EcoTrackingPage: FC = () => {
-    return (
-        <div>Eco Tracking Page</div>
-    )
-}
+  return (
+    <PageTemplate>
+      <div>Eco Tracking Page</div>
+    </PageTemplate>
+  );
+};
