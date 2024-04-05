@@ -1,15 +1,10 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { MainPage } from './pages/mainPage';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-         HELLO JAWS FAM FAM LETS GOOOOOOO
-        </p>
-      </header>
+     <MainPage/>
     </div>
   );
 }
