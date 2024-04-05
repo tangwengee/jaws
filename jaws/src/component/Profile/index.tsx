@@ -5,9 +5,9 @@ import { UserOutlined } from "@ant-design/icons";
 
 export const Profile: FC = () => {
   return (
-    <div style={{ gap: "10px", display: "flex", alignItems: "center", flexDirection: "row" }}>
+    <div style={{ gap: "10px", display: "flex", alignItems: "center", flexDirection: "row",padding: "10px" }}>
       <Avatar style={{ backgroundColor: '#7fb9ba' }} icon={<UserOutlined />} />
-      <div>Hello Mary!</div>
+      <div>Hello Shuang!</div>
     </div>
   );
 };
