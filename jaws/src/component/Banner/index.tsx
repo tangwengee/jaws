@@ -20,7 +20,6 @@ export const Banner: FC = () => {
   return (
     <Menu
       mode="horizontal"
-      defaultSelectedKeys={['1']}
       style={{
         minWidth: 0,
         flex: 'auto',
