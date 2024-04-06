@@ -6,15 +6,17 @@ import { LeaderboardTable } from "../component/LeaderboardTable";
 import { LeaderboardFilter } from "../component/LeaderboardFilter";
 import { Leaf } from "../component/Leaf";
 import { Level } from "../component/Level";
+import { MedalsCard } from "../component/MedalsCard";
+import { AwardCard } from "../component/AwardCard";
+
 
 export const AwardsPage: FC = () => {
-
   const [selectedMenuItem, setSelectedMenuItem] = useState<string>("friends");
 
   const handleMenuItemClick = (key: string) => {
     setSelectedMenuItem(key);
   };
-  
+
   return (
     <PageTemplate>
       <div
@@ -80,8 +82,14 @@ export const AwardsPage: FC = () => {
         </div>
       </div>
 
-      <LeaderboardFilter selectedKey={selectedMenuItem} onMenuItemClick={setSelectedMenuItem}>
-        <LeaderboardTable selectedKey={selectedMenuItem}/>
+      <AwardCard />
+
+      <MedalsCard />
+      <LeaderboardFilter
+        selectedKey={selectedMenuItem}
+        onMenuItemClick={handleMenuItemClick}
+      >
+        <LeaderboardTable selectedKey={selectedMenuItem} />
       </LeaderboardFilter>
     </PageTemplate>
   );
