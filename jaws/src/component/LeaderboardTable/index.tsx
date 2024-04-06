@@ -6,16 +6,16 @@ import { Leaf } from "../Leaf";
 interface LeaderboardItem {
   rank: number;
   username: string;
-  score: number;
+  score: string | number;
 }
 
-const top3LeaderBoardData: LeaderboardItem[] = [
+const top3FriendsLeaderBoardData: LeaderboardItem[] = [
   { rank: 2, username: "Avril", score: 901 },
   { rank: 1, username: "Shuang", score: 920 },
   { rank: 3, username: "Javier", score: 877 },
 ];
 
-const dummyLeaderboardData: LeaderboardItem[] = [
+const dummyFriendsLeaderboardData: LeaderboardItem[] = [
   { rank: 4, username: "John", score: 843 },
   { rank: 5, username: "Mary", score: 833 },
   { rank: 6, username: "Polly", score: 803 },
@@ -25,7 +25,28 @@ const dummyLeaderboardData: LeaderboardItem[] = [
   { rank: 10, username: "Sam", score: 702 },
 ];
 
-export const LeaderboardTable: FC = () => {
+const top3EstateLeaderBoardData: LeaderboardItem[] = [
+  { rank: 2, username: "Bishan", score: "530k" },
+  { rank: 1, username: "Punggol", score: "551k" },
+  { rank: 3, username: "Aljunied", score: "528k" },
+];
+
+const dummyEstateLeaderboardData: LeaderboardItem[] = [
+  { rank: 4, username: "Serangoon", score: "518k" },
+  { rank: 5, username: "Marymount", score: "513k" },
+  { rank: 6, username: "Toa Payoh", score: "502k" },
+  { rank: 7, username: "East Coast", score: "492k" },
+  { rank: 8, username: "Hougang", score: "483k" },
+  { rank: 9, username: "Yishun", score: "477k" },
+  { rank: 10, username: "Hillview", score: "572k" },
+];
+
+
+interface LeaderboardTableProps {
+  selectedKey: string;
+}
+
+export const LeaderboardTable: FC<LeaderboardTableProps> = ({selectedKey}) => {
   return (
     <div
       style={{
@@ -37,7 +58,7 @@ export const LeaderboardTable: FC = () => {
         paddingTop: "20px",
         paddingBottom: "20px",
         gap: "60px",
-        borderRadius: "2%"
+        borderRadius: "2%",
       }}
     >
       <div
@@ -50,7 +71,7 @@ export const LeaderboardTable: FC = () => {
           padding: "30px",
         }}
       >
-        {top3LeaderBoardData.map((item) => (
+        {(selectedKey === "estate"? top3EstateLeaderBoardData : top3FriendsLeaderBoardData).map((item) => (
           <div
             style={{
               height: "88px",
@@ -121,7 +142,7 @@ export const LeaderboardTable: FC = () => {
           flexWrap: "wrap",
         }}
       >
-        {dummyLeaderboardData.map((item) => (
+        {(selectedKey === "estate"? dummyEstateLeaderboardData : dummyFriendsLeaderboardData).map((item) => (
           <div
             style={{
               backgroundColor: item.rank === 7 ? "#57d4d4" : "#7fb9ba",
@@ -169,6 +190,8 @@ export const LeaderboardTable: FC = () => {
                 alignItems: "center",
                 gap: "5px",
                 textAlign: "center",
+                right: "15%",
+                position: "absolute",
               }}
             >
               {item.score}
