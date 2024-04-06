@@ -9,7 +9,7 @@ export const MedalsCard: FC = () => {
     "100%": "#0cf7f7",
   };
 
-  const medal = ({medalType}: {medalType: string}) => (
+  const medal = (medalType: string) => (
     <div
       style={{
         display: "flex",
