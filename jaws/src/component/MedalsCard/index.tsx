@@ -8,7 +8,8 @@ export const MedalsCard: FC = () => {
     "0%": "#67bfbf",
     "100%": "#0cf7f7",
   };
-  return (
+
+  const medal = ({medalType}: {medalType: string}) => (
     <div
       style={{
         display: "flex",
@@ -29,7 +30,7 @@ export const MedalsCard: FC = () => {
           justifyContent: "center",
           alignItems: "center",
           backgroundColor: "#bae7e8",
-          padding: "20px",
+          padding: "15px",
           borderRadius: "15px",
           boxShadow: "3px 3px #bcd4d4",
         }}
@@ -40,30 +41,37 @@ export const MedalsCard: FC = () => {
             flexDirection: "column",
             justifyContent: "center",
             fontWeight: "800",
-            paddingBottom: "10px"
+            paddingBottom: "10px",
           }}
         >
           <div>Ally Ang</div>
         </div>
+        <img src={`/${medalType}.png`} width="50" height="50" alt="" />
         <div
           style={{
-            backgroundColor: "rgb(255,255,255)",
-            height: "80px",
+            marginTop: "5px",
+            fontWeight: "900",
+            borderRadius: "20%",
+            height: "25px",
+            width: "25px",
+            color: "#ccb562",
+            backgroundColor: "rgb(255, 219, 135, 0.2.5)",
             display: "flex",
-            flexDirection: "column",
             justifyContent: "center",
-            alignItems: "left",
-            borderRadius: "15px",
-            padding: "15px",
-            color: "#000000",
-            fontWeight: "600",
-            gap: "5px",
-            boxShadow: "3px 3px #bcd4d4",
+            alignContent: "center",
+            alignItems: "center",
           }}
         >
-          hello
+          11
         </div>
       </div>
+    </div>
+  );
+  return (
+    <div style={{ display: "flex", flexDirection: "row"}}>
+      {medal("gold")}
+      {medal("silver")}
+      {medal("bronze")}
     </div>
   );
 };
